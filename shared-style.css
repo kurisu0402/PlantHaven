@@ -1,0 +1,244 @@
+:root {
+  --green-900: #123b2a;
+  --green-700: #198a66;
+  --green-500: #4fd1c7;
+  --header-color: #182A1E;
+  --green-100: #d9ead3;
+  --text: #1f2d24;
+  --muted: #5c6b60;
+  --white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', 'Segoe UI', Roboto, Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top left, rgba(79, 209, 199, 0.18), transparent 28%),
+    linear-gradient(135deg, #f8fcf4 0%, #eef7eb 100%);
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(rgba(25, 138, 102, 0.08) 1px, transparent 1px);
+  background-size: 22px 22px;
+  opacity: 0.35;
+  pointer-events: none;
+  z-index: -1;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.header,
+.site-header {
+  background: var(--header-color);
+  background-image: linear-gradient(180deg, rgba(24,42,30,0.98) 0%, rgba(24,42,30,0.95) 100%);
+  color: var(--white);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.16);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.header .container,
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 20px;
+}
+
+/* Unified header sizing and colors (enforces consistent header height, logo and nav text)
+   Applies to both .header and .site-header variants used across pages */
+.header,
+.site-header {
+  --header-min-height: 64px;
+}
+
+.header .container,
+.header-inner {
+  min-height: var(--header-min-height);
+  padding: 1rem 20px;
+}
+
+.nav-brand img,
+.logo {
+  height: 40px;
+  width: auto;
+  display: block;
+}
+
+.nav-link,
+.main-nav a {
+  color: #e8f1eb;
+  font-weight: 600;
+  font-size: 1rem; /* unified nav text size */
+  line-height: 1.2;
+}
+
+.contact-btn {
+  font-size: 0.95rem;
+  padding: 0.7rem 1.2rem;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--green-500);
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.nav-menu,
+.main-nav ul {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link,
+.main-nav a {
+  color: #e8f1eb;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+.nav-link::after,
+.main-nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--green-500), #81e6b4);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after,
+.main-nav a:hover::after,
+.main-nav a.active::after {
+  width: 100%;
+}
+
+.nav-link:hover,
+.nav-link.active,
+.main-nav a:hover,
+.main-nav a.active {
+  color: var(--green-500);
+}
+
+.contact-btn {
+  background: linear-gradient(135deg, var(--green-500), #38b2ac);
+  color: white;
+  padding: 0.75rem 1.3rem;
+  border-radius: 8px;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(79, 209, 199, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(79, 209, 199, 0.32);
+}
+
+.footer {
+  background: linear-gradient(135deg, #dfeedd 0%, #d8e8d0 100%);
+  padding: 2.2rem 0;
+  margin-top: 2rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.social-links {
+  display: flex;
+  gap: 0.7rem;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(18, 35, 26, 0.08);
+  color: #264336;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.social-link:hover {
+  transform: translateY(-2px);
+  background: rgba(79, 209, 199, 0.22);
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+}
+
+.footer-nav {
+  display: flex;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer-link,
+.footer-text {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.footer-link:hover {
+  color: var(--green-700);
+}
+
+@media (max-width: 768px) {
+  .header .container,
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-menu,
+  .main-nav ul {
+    gap: 0.8rem 1rem;
+  }
+}
