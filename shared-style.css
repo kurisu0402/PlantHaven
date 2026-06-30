@@ -233,12 +233,44 @@ img {
 @media (max-width: 768px) {
   .header .container,
   .header-inner {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
   }
 
   .nav-menu,
   .main-nav ul {
-    gap: 0.8rem 1rem;
+    flex-wrap: wrap;
+    gap: 0.75rem 1rem;
+    justify-content: center;
+    margin-top: 0.5rem;
+    width: auto;
+  }
+
+  .nav-link,
+  .main-nav a {
+    width: auto;
+    padding: 0.5rem 0.25rem;
+  }
+
+  .contact-btn {
+    width: auto;
+    margin-top: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header .container,
+  .header-inner {
+    padding: 1rem 15px;
+  }
+
+  .nav-menu,
+  .main-nav ul {
+    gap: 0.6rem 0.75rem;
+  }
+
+  .contact-btn {
+    padding: 0.8rem 0.9rem;
   }
 }
