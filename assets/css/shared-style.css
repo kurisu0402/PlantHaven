@@ -91,6 +91,11 @@ img {
   height: 40px;
   width: auto;
   display: block;
+  object-fit: contain;
+}
+
+.nav-brand {
+  flex-shrink: 0;
 }
 
 .nav-link,
